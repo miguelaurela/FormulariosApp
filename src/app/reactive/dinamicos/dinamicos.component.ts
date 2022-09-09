@@ -21,10 +21,11 @@ export class DinamicosComponent implements OnInit {
   }
 
   guardar(){
-    console.log(this.miFormulario.value);
     if (this.miFormulario.invalid) {
       this.miFormulario.markAllAsTouched()
       return;
     }
+    console.log(this.miFormulario.value);
+    this.miFormulario.reset()
   }
 }
