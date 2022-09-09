@@ -1,1 +1,75 @@
-<p>dinamicos works!</p>
+<h2> Reactivos: <small> Dinámicos</small></h2>
+<hr>
+<form [formGroup]="miFormulario" (ngSubmit)="guardar()">
+    <!-- nombre -->
+    <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Nombre</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control"
+            placeholder="Nombre de la persona"
+            formControlName="nombre"
+            required>
+            <span class="form-text text-danger"
+            *ngIf="campoEsValido('nombre')"
+                >   
+                Este campo es obligatorio
+            </span>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Agregar</label>
+        <div class="col-sm-9">
+            <div class="input-group">
+                <input  class="form-control"
+                        formControlName="favorito"
+                        placeholder="Agregar favorito"
+                        >
+                        <!-- (keyup.enter)="" -->
+                <button class="btn btn-outline-primary"
+                        type="button"
+                        
+                        >
+                    Agregar
+                </button>
+                <span class="form-text text-danger"
+                    *ngIf="campoEsValido('favorito')"
+                    >   
+                    Este campo es obligatorio
+                </span>
+            </div>
+        </div>
+    </div>
+    <!-- Lista de Juegos Favoritos -->
+    <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Agregar favorito</label>
+        <div class="col-sm-9">
+            <!-- <div class="input-group mb-1"
+            *ngFor="let juego of persona.favoritos; let i=index">
+                <input type="text" 
+                        class="form-control " 
+                        [(ngModel)]="juego.nombre"
+                        name="favorito_{{i}}"
+                        >
+                <button class="btn btn-outline-danger"
+                (click)="eliminar(i)" >
+                    Eliminar
+                </button>
+            </div> -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-9">
+            <button type="button" 
+            class="btn btn-primary"
+            [disabled]="false"
+            >
+            <!-- (click)="a=1" -->
+                Guardar
+            </button>
+        </div>
+    </div>
+</form>
+<!-- 
+<div>
+   <pre> {{persona|json}}</pre>
+</div> -->
