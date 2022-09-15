@@ -43,8 +43,12 @@
                 <div class="col-sm-9">
                     <input  type="password" 
                             class="form-control"
+                            formControlName="password"
                             placeholder="contraseña">
                             <!-- formControlName="contraseña" -->
+                    <span class="form-text  text-danger">
+                        Debe ser en formato de nombre  y apellido
+                    </span>
                 </div>
             </div>
             <!-- confirmar contraseña -->
@@ -53,8 +57,12 @@
                 <div class="col-sm-9">
                     <input  type="password" 
                             class="form-control"
+                            formControlName="password2"
                             placeholder="confirmar la contraseña">
                             <!-- formControlName="confirmarContraseña" -->
+                    <span class="form-text  text-danger">
+                        Debe ser en formato de nombre  y apellido
+                    </span>
                 </div>
             </div>
             <div class="row">
@@ -71,7 +79,9 @@
 <div class="row">
     <div class="col">
         <span>Valid</span>
-        <pre>{{miFormulario.valid}}</pre>
+        <h2>Form Valid: {{miFormulario.valid}}</h2>
+        <h2>Form Errors</h2>
+        <pre>{{miFormulario.errors|json}}</pre>
 
         <!-- <span>Pristine</span>
         <pre>{{miFormulario.pristine}}</pre>
@@ -83,6 +93,10 @@
         <pre>{{miFormulario.value|json}}</pre>
         <span>username</span>
         <pre>{{miFormulario.controls['username'].errors|json}}</pre>
+        <span>Password</span>
+        <pre>{{miFormulario.controls['password'].errors|json}}</pre>
+        <span>Password2</span>
+        <pre>{{miFormulario.controls['password2'].errors|json}}</pre>
 
 
     </div>
